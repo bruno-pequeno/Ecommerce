@@ -1,0 +1,59 @@
+<mat-toolbar color="primary">
+  <span *ngIf="userData.name">Bem vindo(a)!  {{ userData.name }}</span>
+  <span *ngIf="userData.stamps !== undefined" class="tool-stamps align-end">
+    <ng-container *ngIf="userData.stamps > 0; else noStamps">
+      Você tem {{ userData.stamps }} selos
+    </ng-container>
+    <ng-template #noStamps>
+      Você não possui selos
+    </ng-template>
+  </span>
+</mat-toolbar>
+
+
+<div class="card-container">
+  <mat-card class="card-form__container">
+    <mat-card-header>
+      <mat-card-title>Selo de bronze</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/icons8-prémio-96.png" alt="Selo">
+    <mat-card-content>
+      <p>
+        50 selos
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="stamps50()">Trocar</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="card-form__container">
+    <mat-card-header>
+      <mat-card-title>Selo de prata</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/icons8-prémio-96.png" alt="Selo">
+    <mat-card-content>
+      <p>
+        75 selos
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="stamps75()">Trocar</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="card-form__container">
+    <mat-card-header>
+      <mat-card-title>Selo de ouro</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/icons8-prémio-96.png" alt="Selo">
+    <mat-card-content>
+      <p>
+        100 selos
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="stamps100()">Trocar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
